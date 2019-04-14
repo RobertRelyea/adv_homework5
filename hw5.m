@@ -26,9 +26,25 @@ yg=5;  %Desired goal location in YI
 d_t = 0.01;  %Time step for the c-l feedback loop in seconds
 
 %Control Parameters
-k_rho = 10; %Control parameter for the distance to the goal position regarding robot velocity
-k_alpha = 10;  %Control parameter robot's oreintation with respect to the rho line, determines w
-k_beta = 3;   %Control parameter for the goal orientation, determines w and beta
+%%% THESE ARE WHAT I CHANGE FOR PART 1
+
+% Store all parameters into a container
+cps = containers.Map;
+            %kr ka  kb
+cps('1a') = [5  25  -25];
+cps('1b') = [5  7  -1.25];
+cps('1c') = [5  40  -10];
+
+% Load parameters depending on the problem
+prompt = "Which problem? (EX: '1a', '2b', ...)\n";
+%problem = input(prompt)
+problem='1c'
+params = cps(problem);
+
+% Assign gain parameters
+k_rho = params(1); %Control parameter for the distance to the goal position regarding robot velocity
+k_alpha = params(2);  %Control parameter robot's oreintation with respect to the rho line, determines w
+k_beta = params(3);   %Control parameter for the goal orientation, determines w and beta
 
 d_x = xg - x;  %Desired displacement in XI until the goal
 d_y = yg - y;  %Desired displacement in YI until the goal
