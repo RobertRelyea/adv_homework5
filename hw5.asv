@@ -2,8 +2,8 @@ clear all
 close all
 
 
-goal = '2c'
-params = '1c'
+goal = '1a'
+params = '1a'
 
 XMIN = -10;
 XMAX = 10;
@@ -136,4 +136,4 @@ d_y = yg - y;
 
 end
 
-saveas(gcf, strcat('./figures/',goal, '_', params,'.png'))
+save(strcat(params, '_', goa
