@@ -110,7 +110,7 @@ end
 d_beta = -(v/rho)*sin(alpha)*d_t;
 
 % Display current feedback
-[d_rho d_alpha d_beta]
+[d_rho d_alpha d_beta];
 
 %New valuaes of the system parameters after differential motion
 rho = rho + d_rho;
@@ -127,7 +127,7 @@ x = x + d_s*cos(theta);
 y = y + d_s*sin(theta);
 
 %Displaying the new location and orentation of the robot
-%[x y theta*180/3.14]
+[x y theta*180/3.14]
 
 %Calculation of new distances to the goal after the differential motion in
 %d_t
